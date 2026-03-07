@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Mess | Resgate sua Fluência</title>
+    <meta name="description" content="Recupere a sua confiança, fluência e prática no inglês com a mentoria do Super Friendly Teacher Mess. Método RESCUE.">
+    <!-- Open Graph Tags for SEO -->
+    <meta property="og:title" content="Teacher Mess | Resgate sua Fluência">
+    <meta property="og:description" content="Recupere a sua confiança, fluência e prática no inglês com a mentoria do Super Friendly Teacher Mess. Método RESCUE.">
+    <meta property="og:image" content="teachermess.jpeg">
+    <meta property="og:url" content="https://superteachermess.com.br">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            content: ["./**/*.{html,js}"],
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        obsidian: '#050507',
+                        'p-orange': '#667eea',
+                        'p-accent': '#ff6b6b',
+                        'p-glow': '#764ba2',
+                        'text-high': '#F0F4F8',
+                        'text-low': '#A0B0C0',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
+
+        .cta-clip { clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px); }
+
+        /* HERO */
+        .hero-bg {
+            background-image: url('teachermess.jpeg');
+            background-size: cover;
+            background-position: center 28%;
+            transition: transform 10s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .hero:hover .hero-bg { transform: scale(1.08); }
+
+        .hero-overlay {
+            background: linear-gradient(
+                to right,
+                rgba(5, 5, 7, 0.94) 0%,
+                rgba(5, 5, 7, 0.88) 38%,
+                rgba(5, 5, 7, 0.62) 68%,
+                rgba(5, 5, 7, 0.28) 100%
+            );
+        }
+
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(40px); 
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .badge-red {
+            background: linear-gradient(90deg, #991b1b, #b91c1c);
+        }
+        .title-blue { color: #3b82f6; }
+
+        .cta-pink {
+            background: #ff4d6d;
+            transition: all 0.4s ease;
+        }
+        .cta-pink:hover {
+            background: #e11d48;
+            transform: translateY(-3px) scale(1.03);
+        }
+        .animate-pulse-slow { animation: pulse-slow 2s infinite; }
+        @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
+
+        .glass-card {
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 30px 60px -15px rgb(102 126 234 / 0.35);
+        }
+
+        /* FAQ micro-animação */
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile Enhancements */
+        @media (max-width: 768px) {
+            .glass-card { padding: 2rem; margin-bottom: 2rem; }
+            .hero { background-position: center top; }
+        }
+    </style>
+</head>
+
+<body class="bg-obsidian text-text-high font-sans overflow-x-hidden">
+
+    <!-- HUD -->
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.12)_50%),radial-gradient(circle_at_center,transparent_0%,#000_140%)]"></div>
+
+    <!-- HEADER -->
+    <header id="main-header" 
+            class="fixed top-0 left-0 w-full z-[1000] h-20 px-6 md:px-12 bg-obsidian/70 backdrop-blur-2xl border-b border-white/10 flex items-center justify-between transition-all duration-500">
+
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="w-5 h-5 bg-[#3b82f6] rotate-45 shadow-[0_0_20px_#3b82f6] group-active:rotate-90 transition-transform"></div>
+            <span class="font-black text-2xl tracking-[-1px] text-white">TEACHER MESS</span>
+        </a>
+
+        <!-- NAV – Unificada com .nav-link -->
+        <nav class="hidden md:flex items-center gap-10 text-sm font-semibold uppercase tracking-widest">
+            <a href="#home" class="nav-link hover:text-white transition-colors">INÍCIO</a>
+            <a href="#conteudo" class="nav-link hover:text-white transition-colors">CONTEÚDO</a>
+            <a href="#depoimentos" class="nav-link hover:text-white transition-colors">DEPOIMENTOS</a>
+            <a href="#idealizador" class="nav-link hover:text-white transition-colors">TEACHER MESS</a>
+            <a href="#planos" class="nav-link hover:text-white transition-colors">INVESTIMENTO</a>
+            <a href="#faq" class="nav-link hover:text-white transition-colors">FAQ</a>
+        </nav>
+
+        <button id="mobile-menu" class="md:hidden w-10 h-10 flex items-center justify-center z-[1002]">
+            <div id="hamburger" class="space-y-1.5">
+                <span class="bar block w-7 h-px bg-white transition-all"></span>
+                <span class="bar block w-7 h-px bg-white transition-all"></span>
+                <span class="bar block w-7 h-px bg-white transition-all"></span>
+            </div>
+        </button>
+    </header>
+
+    <!-- MOBILE MENU – Unificada com .nav-link -->
+    <div id="mobile-nav" 
+         class="fixed inset-0 bg-obsidian/95 backdrop-blur-3xl z-[999] translate-x-full transition-transform duration-700 flex flex-col items-center justify-center gap-12 text-4xl font-bold uppercase tracking-widest text-text-low">
+        <a href="#home" class="nav-link hover:text-white transition-colors">Início</a>
+        <a href="#conteudo" class="nav-link hover:text-white transition-colors">Conteúdo</a>
+        <a href="#depoimentos" class="nav-link hover:text-white transition-colors">Depoimentos</a>
+        <a href="#idealizador" class="nav-link hover:text-white transition-colors">Teacher Mess</a>
+        <a href="#planos" class="nav-link hover:text-white transition-colors">Investimento</a>
+        <a href="#faq" class="nav-link hover:text-white transition-colors">FAQ</a>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <section id="home" class="min-h-[100svh] flex items-center relative bg-black pt-20 overflow-hidden hero">
+            <div class="hero-bg absolute inset-0"></div>
+            <div class="hero-overlay absolute inset-0"></div>
+
+            <div class="relative z-10 px-6 md:px-20 max-w-4xl mx-auto text-center md:text-left">
+                <div class="badge-red inline-flex items-center gap-3 text-white text-xs font-bold tracking-[2px] px-8 py-4 rounded-full mb-8 shadow-xl">
+                    <i class="fas fa-exclamation-triangle"></i> VAGAS LIMITADAS
+                </div>
+                
+                <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-black leading-[1.1] tracking-tighter text-white">
+                    SUPER FRIENDLY<br>
+                    <span class="title-blue">TEACHER MESS</span>
+                </h1>
+                
+                <p class="mt-8 max-w-2xl mx-auto md:mx-0 text-xl md:text-2xl leading-relaxed text-gray-200">
+                    Recupere sua confiança e fluência no inglês. Estude no seu ritmo com um grupo exclusivo.
+                </p>
+                
+                <div class="mt-12 flex flex-col md:flex-row gap-6 items-center justify-center md:justify-start">
+                    <a href="#planos" 
+                       class="cta-pink cta-clip inline-block w-full md:w-auto px-14 py-7 text-white font-bold text-base tracking-widest transition-all active:scale-95 shadow-2xl animate-pulse-slow">
+                        RESGATAR FLUÊNCIA AGORA <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <p class="text-xs text-rose-400 flex items-center gap-2">
+                        <i class="fas fa-bolt"></i> Oferta termina em breve
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTEÚDO -->
+        <section id="conteudo" class="py-20 px-6 md:px-20 border-b border-white/10">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <div class="inline px-6 py-2 text-p-accent text-xs font-bold tracking-widest bg-white/5 rounded-3xl">MISSÃO DE RESGATE</div>
+                <h2 class="text-5xl font-black mt-4">Sobre o Conteúdo</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass-card bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-10 rounded-3xl reveal">
+                    <i class="fas fa-user-graduate text-4xl text-p-orange mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-4">Para quem já estudou</h3>
+                    <p class="text-text-low">Perfeito para quem tem base, mas está enferrujado e perdeu a prática.</p>
+                </div>
+                <div class="glass-card bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-10 rounded-3xl reveal">
+                    <i class="fas fa-lightbulb text-4xl text-p-orange mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-4">Método Dinâmico</h3>
+                    <p class="text-text-low">Aulas gravadas + humor e recursos visuais para fixar rápido.</p>
+                </div>
+                <div class="glass-card bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-10 rounded-3xl reveal">
+                    <i class="fas fa-users text-4xl text-p-orange mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-4">Comunidade VIP</h3>
+                    <p class="text-text-low">Grupo exclusivo para prática diária e troca de experiências.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS (Nova Seção) -->
+        <section id="depoimentos" class="py-20 px-6 md:px-20 bg-[#0b0b0d] border-b border-white/10">
+            <div class="max-w-6xl mx-auto text-center mb-16 reveal">
+                <h2 class="text-5xl font-black">O QUE DIZEM NOSSOS ALUNOS</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass-card bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-10 rounded-3xl reveal">
+                    <i class="fas fa-quote-left text-4xl text-p-orange mb-6"></i>
+                    <p class="text-text-low">"Recuperei minha fluência em semanas! O método é incrível."</p>
+                    <p class="mt-4 font-semibold">- João Silva</p>
+                </div>
+                <div class="glass-card bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-10 rounded-3xl reveal">
+                    <i class="fas fa-quote-left text-4xl text-p-orange mb-6"></i>
+                    <p class="text-text-low">"O humor do Teacher Mess torna o aprendizado divertido e eficaz."</p>
+                    <p class="mt-4 font-semibold">- Maria Oliveira</p>
+                </div>
+                <div class="glass-card bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-10 rounded-3xl reveal">
+                    <i class="fas fa-quote-left text-4xl text-p-orange mb-6"></i>
+                    <p class="text-text-low">"Grupo VIP ajudou muito na prática diária. Recomendo!"</p>
+                    <p class="mt-4 font-semibold">- Carlos Pereira</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IDEALIZADOR -->
+        <section id="idealizador" class="py-24 px-6 md:px-20 bg-[#0b0b0d]">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-2 reveal">
+                    <img src="professor.jpeg" loading="lazy" alt="Foto de Messias Rabello, idealizador do curso Teacher Mess" 
+                         class="w-full rounded-3xl shadow-2xl transition-transform hover:scale-105 duration-700">
+                </div>
+                <div class="md:col-span-3 reveal">
+                    <span class="text-p-orange text-sm font-bold tracking-widest">SEU MENTOR</span>
+                    <h2 class="text-5xl font-black mt-3">Messias Rabello</h2>
+                    <p class="text-text-low mt-8 leading-relaxed text-justify">
+                        Com uma abordagem única que mistura humor e técnica, transformei a forma de ensinar inglês. 
+                        Minha missão não é só ensinar gramática — é resgatar sua confiança e fazer você falar com fluência.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLANOS -->
+        <section id="planos" class="py-24 px-6 md:px-20">
+            <div class="max-w-md mx-auto text-center">
+                <h2 class="text-5xl font-black">INVESTIMENTO</h2>
+                <div class="glass-card mt-12 p-10 rounded-3xl border border-white/10 bg-gradient-to-b from-white/5">
+                    <h3 class="font-semibold text-3xl mb-6">ACESSO COMPLETO</h3>
+                    
+                    <div class="text-center">
+                        <span class="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-p-orange">R$ 699,99</span>
+                        <p class="text-text-low text-sm mt-2">ou até 5x sem juros</p>
+                    </div>
+
+                    <ul class="mt-10 space-y-5 text-left">
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-p-accent mt-1"></i> Acesso vitalício</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-p-accent mt-1"></i> Grupo exclusivo</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-p-accent mt-1"></i> Certificado digital</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-p-accent mt-1"></i> Suporte direto</li>
+                    </ul>
+                    
+                    <a href="https://pay.hotmart.com/K99956629B" rel="noopener noreferrer" 
+                       class="mt-12 block w-full py-8 bg-gradient-to-r from-p-orange to-p-glow text-white font-bold tracking-widest text-lg rounded-2xl hover:scale-105 transition-transform active:scale-95">
+                        COMPRAR AGORA
+                    </a>
+                </div>
+                
+                <div class="mt-12 p-8 border border-dashed border-p-accent/30 bg-p-accent/5 rounded-3xl">
+                    <p class="text-p-accent font-bold text-sm">GARANTIA INCONDICIONAL DE 7 DIAS</p>
+                    <p class="text-xs text-text-low mt-3">Se não amar, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-24 px-6 md:px-20 border-t border-white/10">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-5xl font-black text-center mb-12">DÚVIDAS FREQUENTES</h2>
+                
+                <div class="space-y-4">
+                    <div class="faq-item bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
+                        <button class="faq-trigger w-full px-8 py-7 text-left flex justify-between items-center" aria-expanded="false" aria-controls="faq-content-1">
+                            <span class="text-lg font-medium">Para quem é esse curso?</span>
+                            <div class="faq-icon"><i class="fas fa-plus text-xl"></i></div>
+                        </button>
+                        <div id="faq-content-1" class="faq-content max-h-0 overflow-hidden transition-all duration-500">
+                            <div class="px-8 pb-8 text-text-low">
+                                Perfeito para quem já estudou inglês mas se sente "enferrujado" e perdeu a prática.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
+                        <button class="faq-trigger w-full px-8 py-7 text-left flex justify-between items-center" aria-expanded="false" aria-controls="faq-content-2">
+                            <span class="text-lg font-medium">Como acesso o curso?</span>
+                            <div class="faq-icon"><i class="fas fa-plus text-xl"></i></div>
+                        </button>
+                        <div id="faq-content-2" class="faq-content max-h-0 overflow-hidden transition-all duration-500">
+                            <div class="px-8 pb-8 text-text-low">
+                                Após o pagamento, você recebe imediatamente o acesso vitalício por e-mail.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
+                        <button class="faq-trigger w-full px-8 py-7 text-left flex justify-between items-center" aria-expanded="false" aria-controls="faq-content-3">
+                            <span class="text-lg font-medium">Recebo certificado?</span>
+                            <div class="faq-icon"><i class="fas fa-plus text-xl"></i></div>
+                        </button>
+                        <div id="faq-content-3" class="faq-content max-h-0 overflow-hidden transition-all duration-500">
+                            <div class="px-8 pb-8 text-text-low">
+                                Sim! Ao concluir, você ganha um certificado digital válido para currículo e LinkedIn.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
+                        <button class="faq-trigger w-full px-8 py-7 text-left flex justify-between items-center" aria-expanded="false" aria-controls="faq-content-4">
+                            <span class="text-lg font-medium">E se eu não gostar?</span>
+                            <div class="faq-icon"><i class="fas fa-plus text-xl"></i></div>
+                        </button>
+                        <div id="faq-content-4" class="faq-content max-h-0 overflow-hidden transition-all duration-500">
+                            <div class="px-8 pb-8 text-text-low">
+                                Garantia total de 7 dias. Se não for para você, devolvemos 100% do investimento.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-16 text-center bg-[#020203] border-t border-white/10">
+        <p class="text-2xl font-black tracking-widest">TEACHER MESS</p>
+        <p class="mt-4 text-sm text-text-low">Desenvolvido por <a href="https://mateuscalixto.com.br" class="text-p-orange hover:underline">Mateus Calixto</a></p>
+        <p class="text-[10px] text-white/30 mt-10">© 2025 Teacher Mess - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ====================== MOBILE MENU ======================
+            const menuBtn = document.getElementById('mobile-menu');
+            const mobileNav = document.getElementById('mobile-nav');
+            const hamburger = document.getElementById('hamburger');
+            let isOpen = false;
+
+            menuBtn.addEventListener('click', () => {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileNav.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                    hamburger.children[0].style.transform = 'rotate(45deg) translateY(6px)';
+                    hamburger.children[1].style.opacity = '0';
+                    hamburger.children[2].style.transform = 'rotate(-45deg) translateY(-6px)';
+                } else {
+                    mobileNav.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                    hamburger.children[0].style.transform = 'none';
+                    hamburger.children[1].style.opacity = '1';
+                    hamburger.children[2].style.transform = 'none';
+                }
+            });
+
+            document.querySelectorAll('#mobile-nav a').forEach(link => {
+                link.addEventListener('click', () => { if (isOpen) menuBtn.click(); });
+            });
+
+            // ====================== SCROLL SPY MELHORADO ======================
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function updateActiveLink() {
+                let current = 'home'; // padrão inicial
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 250) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-p-orange', 'border-b-2', 'border-p-orange');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('text-p-orange', 'border-b-2', 'border-p-orange');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink(); // executa uma vez no carregamento
+
+            // ====================== REVEAL ANIMATION ======================
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.15 });
+            reveals.forEach(el => observer.observe(el));
+
+            // ====================== FAQ COM ARIA ======================
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const trigger = item.querySelector('.faq-trigger');
+                const content = item.querySelector('.faq-content');
+                const iconContainer = trigger.querySelector('.faq-icon');
+                const icon = iconContainer.querySelector('i');
+
+                trigger.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    const ariaExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+                    faqItems.forEach(other => {
+                        if (other !== item) {
+                            other.classList.remove('active');
+                            other.querySelector('.faq-content').style.maxHeight = null;
+                            other.querySelector('.faq-icon').classList.remove('rotate-180');
+                            const otherIcon = other.querySelector('i');
+                            otherIcon.classList.remove('fa-minus');
+                            otherIcon.classList.add('fa-plus');
+                            other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                        }
+                    });
+
+                    if (isActive) {
+                        item.classList.remove('active');
+                        content.style.maxHeight = null;
+                        iconContainer.classList.remove('rotate-180');
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                        trigger.setAttribute('aria-expanded', 'false');
+                    } else {
+                        item.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        iconContainer.classList.add('rotate-180');
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                        trigger.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // ====================== SMOOTH SCROLL ======================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // ====================== HEADER SOLID ======================
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 80) {
+                    header.classList.add('bg-obsidian/95', 'shadow-2xl');
+                } else {
+                    header.classList.remove('bg-obsidian/95', 'shadow-2xl');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
